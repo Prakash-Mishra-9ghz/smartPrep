@@ -10,7 +10,7 @@ const blacklistSchema = new mongoose.Schema({
 })
 
 // Remove blacklisted tokens after the JWT expiration time to avoid unused storage
-blacklistSchema.index({ createdAt: 1 }, { expireAfterSeconds: 60 * 60 });
+blacklistSchema.index({ createdAt: 1 }, { expireAfterSeconds: 60 * 60 * 6});
 
 const tokenBlacklistModel = mongoose.model('tokenBlacklistModel', blacklistSchema);
 module.exports = tokenBlacklistModel; 

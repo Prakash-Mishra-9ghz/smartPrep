@@ -42,7 +42,8 @@ const interviewReportSchema = z.object({
             .describe("A specific, actionable preparation task that can reasonably be completed during the day.")
           ).describe("A prioritized checklist of practical tasks to complete for the day's preparation.")
       })
-    ).describe("Create a practical day-by-day interview preparation plan. Each day should focus on one major topic and include multiple actionable tasks that progressively improve interview readiness.")
+    ).describe("Create a practical day-by-day interview preparation plan. Each day should focus on one major topic and include multiple actionable tasks that progressively improve interview readiness."),
+  title: z.string().describe("The title of the job for which the interview report is generated")
 });
 
 async function generateInterviewReport({resume, selfDescription, jobDescription}) {
